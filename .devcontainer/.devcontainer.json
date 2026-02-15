@@ -1,0 +1,17 @@
+{
+  "name": "Pantheon Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+        "python.terminal.activateEnvInCurrentTerminal": true
+      },
+      "extensions": ["ms-python.python", "ms-python.vscode-pylance", "github.copilot", "eamodio.gitlens"]
+    }
+  },
+  "containerEnv": {
+    "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerEnv:PATH}"
+  },
+  "postCreateCommand": "bash setup.sh"
+}
